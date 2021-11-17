@@ -1,0 +1,53 @@
+#%RAML 1.0 Library
+usage: used for common data types across projects
+
+types:
+  fieldValidationType:
+    type: object
+    properties:
+      field:
+        type: string
+        description: Input field that is missing or not complaint to validation
+        required: true
+      description:
+        type: string
+        description: Related validation error
+        required: true
+
+  errorType:
+    type: object
+    properties:
+      code:
+        type: number
+        description: error code
+        required: true
+      message:
+        type: string
+        description: error message
+        required: true
+      description: 
+        type: string
+        description: additional error description
+        required: false
+      validationErrors:
+        type: fieldValidationType []   
+        description: validation errors
+        required: false
+      dateTime:
+        type: datetime
+        description: current dateTime
+        required: true
+      transactionId:
+        type: string
+        description: transaction id
+        required: true
+      additionalDocumentationUrl:
+        type: string
+        description: url where additional information can be found for the exception
+        required: false  
+
+
+
+          
+
+

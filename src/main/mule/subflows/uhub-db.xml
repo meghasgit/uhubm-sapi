@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+		<sub-flow name="uhubm-db-insert" doc:id="37d0477a-14f6-4816-944d-2b70ba638e92" >
+		<logger level="INFO" doc:name="Start log - DB Insert" doc:id="e6585a34-b658-439b-830b-4be62d79c536" message="Start Log DB Insert: TransactionId: #[vars.transactionId], CorrelationId: #[vars.correlationId], Payload: #[payload]"/>
+		<db:insert doc:name="DB Insert" doc:id="9ee44012-6a19-42f1-ae12-cee81dda64c0" config-ref="Database_Config" autoGenerateKeys="true">
+			<db:sql ><![CDATA[Insert into cvd_case_master(source, case_type, first_name, last_name, phone, email, date_of_birth, national_id, national_id_type,street_address, city, state, postal, country, create_date, update_date, create_by, update_by) values (:source, :case_type, :first_name, :last_name, :phone, :email, TO_DATE(:date_of_birth,'YYYY-MM-DD'), :national_id, :national_id_type, :street_address, :city, :state, :postal, :country, TO_DATE(:create_date,'YYYY-MM-DD'),TO_DATE(:update_date,'YYYY-MM-DD') , :create_by, :update_by) ]]></db:sql>
+			<db:input-parameters ><![CDATA[#[payload]]]></db:input-parameters>
+			<db:auto-generated-keys-column-names >
+				<db:auto-generated-keys-column-name value="CASE_ID" />
+			</db:auto-generated-keys-column-names>
+		</db:insert>
+		<logger level="INFO" doc:name="End Log - DB Insert" doc:id="b4956616-abf2-486a-bead-24651a8131a3" message="End Log DB Insert: TransactionId: #[vars.transactionId], CorrelationId: #[vars.correlationId], Payload: #[payload]"/>
+	
+</sub-flow></mule>

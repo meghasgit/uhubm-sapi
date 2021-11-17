@@ -1,0 +1,23 @@
+%dw 2.0
+
+type auto_37d0477a_14f6_4816_944d_2b70ba638e92_Input_Payload = {|
+  national_id?: String, 
+  street_address?: String, 
+  country?: String, 
+  city?: String, 
+  date_of_birth?: String, 
+  case_type?: String, 
+  last_name?: String, 
+  source?: String, 
+  national_id_type?: String, 
+  update_date?: String, 
+  create_by?: String, 
+  phone?: String, 
+  state?: String, 
+  postal?: String, 
+  create_date?: String, 
+  update_by?: String, 
+  first_name?: String, 
+  email?: String
+|}
+

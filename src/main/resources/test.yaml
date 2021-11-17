@@ -1,0 +1,9 @@
+http:
+  port: "8081"
+  
+database:
+  host: "localhost"
+  port: "1521"
+  username: "system"
+  password: "![HzJPehU66aplD0q2uCBt5w==]"
+  instance: "xe"  
