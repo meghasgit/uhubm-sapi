@@ -136,11 +136,7 @@
 			<version>1.10.0</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
-		<dependency>
-			<groupId>com.mycompany</groupId>
-			<artifactId>ojdbc6_g</artifactId>
-			<version>0.1</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>com.mulesoft.modules</groupId>
 			<artifactId>mule-secure-configuration-property-module</artifactId>
